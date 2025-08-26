@@ -9,9 +9,9 @@ const AdminLogin = () => {
     username: "",
     password: ""
   })
+
   const [checking, setChecking] = useState(true)
   const [submitting, setSubmitting] = useState(false)
-
   const [error, setError] = useState(null)
 
   const handleChange = (e) => {
@@ -21,26 +21,27 @@ const AdminLogin = () => {
     })
   }
 
-  const handleSubmit=async(e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     try {
-      const response =await api.post('/api/auth/login',
-        formData,{
-          withCredentials:true
-        }     
+      const response = await api.post('/api/auth/login',
+        formData, {
+        withCredentials: true
+      }
       )
-      if(response.data.user){
+
+      if (response.data.user) {
         nav("/admin/post")
       }
+
     } catch (error) {
-      const errorMsg = error.response.data.message ||'로그인 실패'
+      const errorMsg = error.response.data.message || '로그인 실패'
 
       setError({
-        message:errorMsg
+        message: errorMsg
       })
     }
-
   }
 
   return (
@@ -50,8 +51,8 @@ const AdminLogin = () => {
         <p>관리자 전용 페이지 입니다.</p>
       </div>
       <form className='login-form' onSubmit={handleSubmit}>
-        <div className="form-field">
 
+        <div className="form-field">
           <label htmlFor="username">관리자 아이디 :</label>
           <input
             type="text"
@@ -59,11 +60,11 @@ const AdminLogin = () => {
             id='username'
             value={formData.username}
             onChange={handleChange}
-            required 
+            required
             placeholder='관리자 아이디' />
         </div>
-        <div className="form-field">
 
+        <div className="form-field">
           <label htmlFor="password">관리자 비밀번호 :</label>
           <input type="password"
             id='password'
@@ -73,6 +74,7 @@ const AdminLogin = () => {
             onChange={handleChange}
             placeholder='관리자 비밀번호' />
         </div>
+
         <div className="error-box"></div>
         <button type='submit'>로그인</button>
       </form>
