@@ -22,8 +22,8 @@ mongoose
     .then(() => console.log("MongoDB 연결 성공"))
     .catch((err) => console.log("연결 실패", err))
 
-    const userRoutes =require("./routes/user")
-app.use("/api/auth",userRoutes)
+const userRoutes = require("./routes/user")
+app.use("/api/auth", userRoutes)
 
 app.listen(PORT, () => {
     console.log("Server Run")

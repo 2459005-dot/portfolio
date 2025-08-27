@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { api } from "../lib/api"
 import { useNavigate } from "react-router-dom"
+import './styles/AdminLogin.scss'
 
 const AdminLogin = () => {
 
@@ -45,7 +46,7 @@ const AdminLogin = () => {
   }
 
   return (
-    <div>
+    <div className='login-container'>
       <div className='login-header'>
         <h3>관리자 로그인</h3>
         <p>관리자 전용 페이지 입니다.</p>
@@ -53,7 +54,7 @@ const AdminLogin = () => {
       <form className='login-form' onSubmit={handleSubmit}>
 
         <div className="form-field">
-          <label htmlFor="username">관리자 아이디 :</label>
+          <label htmlFor="username">관리자 아이디 : </label>
           <input
             type="text"
             name='username'
@@ -65,7 +66,7 @@ const AdminLogin = () => {
         </div>
 
         <div className="form-field">
-          <label htmlFor="password">관리자 비밀번호 :</label>
+          <label htmlFor="password">관리자 비밀번호 : </label>
           <input type="password"
             id='password'
             name='password'

@@ -1,0 +1,19 @@
+section {
+    position: relative;
+    min-height: 100vh;
+    z-index: 0;
+
+    &:nth-child(odd) {
+        background-color: bisque;
+    }
+}
+
+header,
+section {
+    .inner {
+        position: relative;
+        max-width: 160rem;
+        height: 100%;
+        margin: auto;
+    }
+}
