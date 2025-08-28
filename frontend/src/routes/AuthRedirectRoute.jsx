@@ -16,9 +16,9 @@ export default function AuthRedirectRoute({ Component }) {
                 } catch (error) {
                     if (alive) setIsAuthenticated(false)
                 }
-            })()
-        return () => { alive = false }
-    }, [])
+            })();
+        return () => { alive = false; };
+    }, []);
 
     if (isAuthenticated === null) return null;
 

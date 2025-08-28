@@ -2,10 +2,7 @@ section {
     position: relative;
     min-height: 100vh;
     z-index: 0;
-
-    &:nth-child(odd) {
-        background-color: bisque;
-    }
+    background-color: var(--bg);
 }
 
 header,
