@@ -23,7 +23,7 @@ export default function AuthRedirectRoute({ Component }) {
     if (isAuthenticated === null) return null;
 
     return isAuthenticated ?
-        <Navigate to='/admin/post' replace />
+        <Navigate to='/admin/posts' replace />
         :
         <Component />
 }

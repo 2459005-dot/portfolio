@@ -33,7 +33,7 @@ const AdminLogin = () => {
       )
 
       if (response.data.user) {
-        nav("/admin/post")
+        nav("/admin/posts")
       }
 
     } catch (error) {
