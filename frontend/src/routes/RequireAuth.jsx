@@ -14,6 +14,7 @@ export default function RequireAuth({ Component }) {
                     await api.post('/api/auth/verify-token', {})
 
                     if (alive) setOk(true)
+                        
                 } catch (error) {
                     if (alive) setOk(false)
                 }

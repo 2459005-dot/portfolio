@@ -10,10 +10,10 @@ export default function AuthRedirectRoute({ Component }) {
         let alive = true
             (async () => {
                 try {
-                    await api.post('/api/auth/verify-token', {})
-                    if (alive) setIsAuthenticated(true)
+                    await api.post('/api/auth/verify-token', {});
+                    if (alive) setIsAuthenticated(true);
 
-                } catch (error) {
+                } catch {
                     if (alive) setIsAuthenticated(false)
                 }
             })();
