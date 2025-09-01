@@ -21,15 +21,16 @@ const Home = () => {
                     <Aboutme />
                 </section>
 
+                <section id='Work'>
+                    <Work />
+                </section>
+
                 <section id='Contact'>
                     <Contact />
                 </section>
 
-                <section id='Work'>
-                    <Work />
-                </section>
             </main>
-            
+
             <Footer />
         </div>
     )
