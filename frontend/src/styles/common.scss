@@ -3,6 +3,11 @@ section {
     min-height: 100vh;
     z-index: 0;
     background-color: var(--bg);
+    overflow: hidden;
+
+    &#Work {
+        height: auto;
+    }
 }
 
 header,
@@ -54,6 +59,36 @@ section {
             font-weight: 700;
             border-bottom: .1rem solid var(--gray500);
             line-height: 2;
+        }
+
+        h3.sub-tit-2 {
+            font-family: " Noto Sans KR";
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: 1.9rem;
+            font-size: clamp(4rem, 6vw 9.6rem);
+            text-align: center;
+        }
+
+        h4.lst-tit {
+            font-size: clamp(2rem, 4vw, 5.4rem);
+            font-weight: 400;
+            letter-spacing: -0.02rem;
+        }
+
+        p.lst-dsc {
+            font-size: clamp(1.2rem, 1.2vw, 1.6rem);
+            font-weight: 200;
+            margin: 1rem 0;
+            letter-spacing: -0.02rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+
+            span {}
         }
     }
 }

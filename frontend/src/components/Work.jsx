@@ -13,6 +13,9 @@ const Work = () => {
               <h4 className="lst-tit">
                 {work.title}
               </h4>
+              <p className="lst-dsc">
+                {work.description}
+              </p>
               <div className="tags">
                 {work.tags.map((t, i) => {
                   <span key={i}>{t}</span>

@@ -1,4 +1,6 @@
 .inner .work-inner {
+    padding: 20rem 0;
+
     .work-lst {
         display: flex;
         flex-direction: column;
@@ -6,6 +8,14 @@
 
         >li {
             display: flex;
+            background-color: var(--neutral-900);
+
+            .lst-t-wrap {
+                display: block;
+                color: var(--neutral-100);
+                padding: 3rem 1rem;
+
+            }
 
             .lst-img-wrap {
                 width: 48rem;
