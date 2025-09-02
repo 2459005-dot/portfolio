@@ -5,7 +5,7 @@ import './styles/Work.scss'
 const Work = () => {
   return (
     <div className='inner work-inner'>
-      <h3 className='sub-tit-2'>works</h3>
+      <h3 className='sub-tit-2'>works.</h3>
       <ul className="work-lst">
         {work.map((work) => (
           <li key={work.id}>
