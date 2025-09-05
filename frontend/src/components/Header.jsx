@@ -7,6 +7,7 @@ const Header = () => {
 
   const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,12 +22,25 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    const onKey = (e) => e.key == 'Escape' && setMenuOpen(false)
+
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [])
+
   return (
-    <header className={`${scrolled ? "scroll" : ""}`}>
+    <header className={`${scrolled ? "scroll" : ""} ${menuOpen ? "is-open" : ""}`}>
       <div className="inner">
         <h4>LOGO</h4>
         <div className="right-wrap">
-
+          <button
+            className='mob-nav-btn'
+            onClick={() => setMenuOpen(v => !v)}>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </button>
           <Nav />
           <button className='btn' onClick={toggleTheme}>{theme}</button>
         </div>
