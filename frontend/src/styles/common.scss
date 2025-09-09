@@ -8,6 +8,24 @@ section {
     &#Work {
         height: auto;
     }
+
+    &#Contact {
+        height: 100vh;
+
+        @media screen and (max-width:1200px) {
+            height: auto;
+            min-height: auto;
+            padding: clamp(10rem, 15vw, 20rem) 0;
+        }
+    }
+
+    &#Aboutme {
+        @media screen and (max-width:1200px) {
+            height: auto;
+            min-height: auto;
+            padding: clamp(10rem, 15vw, 20rem) 0;
+        }
+    }
 }
 
 header,
@@ -95,9 +113,9 @@ section {
             span {
                 display: block;
                 padding: .5rem 1.6rem;
-                background-color: var(--gray100);
+                background-color: var(--gray200);
                 border-radius: 10rem;
-                color: var(--gray900);
+                color: var(--gray800);
             }
         }
     }

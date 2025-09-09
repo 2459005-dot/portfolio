@@ -4,10 +4,18 @@
     justify-content: center;
     height: 100vh !important;
 
+    @media screen and (max-width:1200px) {
+        height: auto;
+    }
+
     h1.tit {
         align-self: flex-end;
-        transform: translateX(10vw);
+        transform: translateX(11vw);
         position: relative;
+
+        @media screen and (max-width:1599px) {
+            transform: translateX(0);
+        }
 
         .star-spin {
             position: absolute;
@@ -22,8 +30,16 @@
         width: 100%;
         margin-top: 5.3rem;
 
+        @media screen and (max-width:1440px) {
+            flex-wrap: wrap;
+        }
+
         .in-wrap {
             flex: 1;
+
+            @media screen and (max-width:1440px) {
+                min-width: 30rem;
+            }
 
             .lst {
                 >li {

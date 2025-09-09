@@ -5,12 +5,20 @@
 
     h1.tit {
         transform: translateX(-5rem);
+
+        @media screen and (max-width:1200px) {
+            transform: translateX(0);
+        }
     }
 
     .contact-wrapper {
         display: flex;
         gap: 5rem;
-        padding-top: 16rem;
+        padding-top: clamp(12rem, 14vw, 16rem);
+
+        @media screen and (max-width:1200px) {
+            flex-direction: column;
+        }
 
         .contact-form {
             flex: 1;
@@ -19,6 +27,8 @@
                 li {
                     display: flex;
                     padding: 0.5rem 0;
+
+
 
                     .label {
                         width: 15.8rem;
@@ -37,7 +47,15 @@
                             border: .1rem solid var(--gray200);
                             border-radius: .3rem;
                         }
+                    }
 
+                    @media screen and (max-width:1200px) {
+                        flex-direction: column;
+                        gap: .5rem;
+
+                        .label {
+                            width: 100%;
+                        }
                     }
 
                     &:last-child {
@@ -78,11 +96,37 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
+                    @media screen and (max-width:1200px) {
+                        display: none;
+                    }
                 }
 
                 .content,
                 .contact-chips {
                     flex: 2;
+                    padding-left: 2rem;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    @media screen and (max-width:1200px) {
+                        padding-left: 0;
+                        text-align: center;
+                        gap: .5rem;
+                        padding: 2rem 0;
+                    }
+                }
+
+                .contact-chips{
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    @media screen and (max-width:768px) {
+                        
+                    }
                 }
 
                 .content {
