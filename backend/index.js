@@ -23,7 +23,10 @@ mongoose
     .catch((err) => console.log("연결 실패", err))
 
 const userRoutes = require("./routes/user")
+const contactRoutes = require('./routes/contactRoutes')
 app.use("/api/auth", userRoutes)
+app.use("/api/contact", contactRoutes)
+
 
 app.listen(PORT, () => {
     console.log("Server Run")

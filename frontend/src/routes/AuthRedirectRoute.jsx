@@ -8,15 +8,15 @@ export default function AuthRedirectRoute({ Component }) {
 
   useEffect(() => {
     let alive = true;
-      (async () => {
-        try {
-          await api.post('/api/auth/verify-token', {});
-          if (alive) setIsAuthenticated(true);
+    (async () => {
+      try {
+        await api.post('/api/auth/verify-token', {}, { withCredentials: true });
+        if (alive) setIsAuthenticated(true);
 
-        } catch {
-          if (alive) setIsAuthenticated(false);
-        }
-      })();
+      } catch {
+        if (alive) setIsAuthenticated(false);
+      }
+    })();
     return () => { alive = false; };
   }, []);
 

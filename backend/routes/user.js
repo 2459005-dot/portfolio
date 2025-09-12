@@ -128,7 +128,7 @@ router.post('/logout', async (req, res) => {
             console.log("토큰 검증 오류", error)
         }
 
-        res.clearCookie(COOKIE_NAME, token, {
+        res.clearCookie(COOKIE_NAME, {
             httpOnly: true,
             secure: SECURE,
             sameSite: SAMESITE,
