@@ -1,37 +1,25 @@
-const dotenv = require("dotenv")
-const express = require("express")
-const mongoose = require("mongoose")
-const cors = require("cors")
-const cookieParser = require("cookie-parser");
+import "dotenv/config";
+import express from "express"
+import cors from "cors"
+import mongoose from "mongoose";
+import filesRouter from './routes/files.js'
 
-dotenv.config()
-
-const app = express()
 const PORT = process.env.PORT
+await mongoose.connect(process.env.MONGO_URI)
+const app = express()
 
-app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded())
 app.use(cors({
-    origin: process.env.FRONT_ORIGIN,
-    credentials: true
+    origin:process.env.FRONT_ORIGIN,
+    credentials:true
 }))
 
-mongoose
-    .connect(process.env.MONGO_URI)
-    .then(() => console.log("MongoDB 연결 성공"))
-    .catch((err) => console.log("연결 실패", err))
+app.use(express.json())
+app.use('/api/files',filesRouter)
 
-const userRoutes = require("./routes/user")
-const contactRoutes = require('./routes/contactRoutes')
-app.use("/api/auth", userRoutes)
-app.use("/api/contact", contactRoutes)
-
-
-app.listen(PORT, () => {
-    console.log("Server Run")
+app.get('/',(req,res)=>{
+    res.send('Hello world')
 })
 
-app.get('/', (req, res) => {
-    res.send("Hello Express")
+app.listen(PORT,()=>{
+    console.log(`Server is running ${PORT}`)
 })
