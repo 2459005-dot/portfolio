@@ -9,17 +9,17 @@ await mongoose.connect(process.env.MONGO_URI)
 const app = express()
 
 app.use(cors({
-    origin:process.env.FRONT_ORIGIN,
-    credentials:true
+    origin: process.env.FRONT_ORIGIN,
+    credentials: true
 }))
 
 app.use(express.json())
-app.use('/api/files',filesRouter)
+app.use('/api/files', filesRouter)
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     res.send('Hello world')
 })
 
-app.listen(PORT,()=>{
+app.listen(PORT, () => {
     console.log(`Server is running ${PORT}`)
 })
