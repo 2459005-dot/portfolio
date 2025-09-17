@@ -21,7 +21,6 @@ export const presignPut = (Key, ContentType) =>
         { expiresIn: 300 }
     )
 
-
 export const presignGet = (Key, sec = 300) =>
     getSignedUrl(
         s3,
