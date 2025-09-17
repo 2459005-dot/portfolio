@@ -122,10 +122,20 @@ router.delete('/:id', async (req, res) => {
 
         if (!it) return res.sendStatus(404)
 
+        const rowKey = typeof it.key === 'string' ? it.key : '';
+        const key = decodeURIComponent(rowKey)
+
+        if (!key.startsWith('uploads/')) {
+            console.log('upexpected key', key)
+            return res.status(400).json({ error: '삭제 불가능한 경로' })
+        }
+
+        console.log('s3 delete key', key)
+
         await deleteObject(it.key)
         await it.deleteOne()
 
-        res.status(201).json({ message: "S3 메타데이터 삭제 성공" })
+        res.status(204).end()
 
     } catch (error) {
         console.error('메타데이터 삭제 에러', error)

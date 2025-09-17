@@ -1,5 +1,6 @@
 .form-list {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.2rem;
     align-items: center;
     justify-content: space-between;
@@ -9,7 +10,13 @@
     border-radius: 1.2rem;
     // font-size: 1.6rem;
 
-    >* {
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .left>* {
         border-radius: .5rem;
         padding: 1rem;
     }
