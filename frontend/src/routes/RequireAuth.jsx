@@ -7,15 +7,15 @@ export default function RequireAuth({ Component }) {
 
     useEffect(() => {
         let alive = true;
-            (async () => {
-                try {
-                    await api.post('/api/auth/verify-token')
-                    setOk(true)
+        (async () => {
+            try {
+                await api.post('/api/auth/verify-token')
+                setOk(true)
 
-                } catch (error) {
-                    setOk(false)
-                }
-            })()
+            } catch (error) {
+                setOk(false)
+            }
+        })()
 
         return () => { alive = false }
     }, [])

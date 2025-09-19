@@ -45,10 +45,10 @@ const Contact = () => {
     <div className='inner contact-inner'>
 
       <h1 className='tit'>
+        contactme
         <span className='star-spin'>
           <i className='star'>✱</i>
         </span>
-        contactme
       </h1>
 
       <div className="contact-wrapper">
@@ -134,7 +134,6 @@ const Contact = () => {
             </div>
           </li>
         </ul>
-
       </div>
     </div>
   )

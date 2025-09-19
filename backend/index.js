@@ -19,8 +19,8 @@ app.use(cors({
 
 mongoose
     .connect(process.env.MONGO_URI)
-    .then(() => console.log("MongoDB 연결 성공"))
-    .catch((err) => console.log("연결 실패", err))
+    .then(() => { console.log("MongoDB 연결 성공") })
+    .catch((error) => console.log("연결 실패", error))
 
 const userRoutes = require("./routes/user")
 const contactRoutes = require('./routes/contactRoutes')

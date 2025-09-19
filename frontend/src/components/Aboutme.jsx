@@ -1,6 +1,5 @@
 import React from 'react'
 import './styles/Aboutme.scss'
-import aboutme from '../utils/aboutme'
 import aboutMe from '../utils/aboutme'
 
 const Aboutme = () => {
@@ -29,11 +28,8 @@ const Aboutme = () => {
       </div>
 
       <div className="about-container">
-
         <div className="in-wrap">
-          <h4 className="list-lst">
-            list-tit
-          </h4>
+          <h4 className="list-lst">list-tit</h4>
           <ul className="lst">
             <li><strong>이름</strong> : {profile.name}</li>
             <li><strong>나이</strong> : {profile.age}</li>
@@ -68,7 +64,6 @@ const Aboutme = () => {
             ))}
           </ul>
         </div>
-
       </div>
     </div>
   )

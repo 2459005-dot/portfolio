@@ -1,6 +1,6 @@
+// src/data/works.js
 const img = (path) => `/img/${path}`;
-
-const work = [
+const works = [
     {
         id: "w-001",
         title: "Social Media Dashboard",
@@ -58,7 +58,6 @@ const work = [
             "React + Vite 기반의 SNS 통계/알림을 한눈에 보는 대시보드. 카드/차트/필터 컴포넌트로 모듈화.",
         tags: ["REACT", "RESPONSIVE", "DASHBOARD", "CHART", "CLEANUI"],
         thumbnail: img("p-1.png"),
-        // 선택: 상세 보기용
         period: "2025.07 ~ 2025.08",
         role: "Front-end",
         stack: ["React", "Vite", "Zustand", "Recharts"],
@@ -100,7 +99,6 @@ const work = [
             notion: "#",
         },
     },
-    // 필요 개수만큼 추가
 ];
 
-export default work
+export default works

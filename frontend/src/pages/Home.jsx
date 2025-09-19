@@ -11,7 +11,6 @@ const Home = () => {
     return (
         <div>
             <Header />
-
             <main>
                 <section id='Hero'>
                     <Hero />
@@ -28,9 +27,7 @@ const Home = () => {
                 <section id='Contact'>
                     <Contact />
                 </section>
-
             </main>
-
             <Footer />
         </div>
     )

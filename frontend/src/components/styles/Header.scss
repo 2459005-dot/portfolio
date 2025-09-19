@@ -28,32 +28,6 @@ header {
         }
     }
 
-    &.is-open {
-        .inner {
-            .right-wrap {
-                nav ul {
-                    right: 0;
-                }
-
-                span {
-
-                    &:nth-child(2) {
-                        transform: translateX(100%);
-                        opacity: 0;
-                    }
-
-                    &:nth-child(1) {
-                        transform: translateY(1.1rem) rotate(45deg);
-                    }
-
-                    &:nth-child(3) {
-                        transform: translateY(-1.1rem) rotate(-45deg);
-                    }
-                }
-            }
-        }
-    }
-
     .inner {
         display: flex;
         border-bottom: .1rem solid transparent;
@@ -74,11 +48,12 @@ header {
                 gap: 1rem;
             }
 
+
             .mob-nav-btn {
-                display: none;
                 position: relative;
                 width: 3.2rem;
                 height: 2.4rem;
+                display: none;
 
                 span {
                     position: absolute;
@@ -103,6 +78,7 @@ header {
                     }
                 }
 
+
                 @media screen and (max-width:768px) {
                     display: block;
                 }
@@ -114,12 +90,13 @@ header {
                 font-size: 1.4rem;
 
                 @media screen and (max-width:768px) {
+
                     position: fixed;
                     top: 5rem;
                     display: block;
                     text-align: center;
                     width: 30%;
-                    right: -30%;
+                    right: -110%;
                     transition: right .3s ease-in-out;
 
                     >li {
@@ -129,7 +106,7 @@ header {
                         >a {
                             padding: 2rem 0;
                             display: block;
-                            color: var(--gray900);
+                            color: var(--gray900)
                         }
 
                         &::after {
@@ -147,18 +124,46 @@ header {
                             background-color: var(--gray900);
 
                             >a {
-                                color: var(--gray100);
+                                color: var(--gray100)
                             }
 
                             &::after {
                                 background-color: var(--primary);
                             }
+
                         }
                     }
 
                     >li+li {
-                        border-top: .1rem solid var(--gray300);
+                        border-top: .1rem solid var(--gray200);
                     }
+                }
+            }
+        }
+    }
+
+    &.is-open {
+        .inner {
+            .right-wrap {
+                .mob-nav-btn {
+                    span:nth-child(1) {
+                        transform: rotate(45deg);
+                        top: 1.1rem;
+                    }
+
+                    span:nth-child(2) {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+
+                    span:nth-child(3) {
+                        transform: rotate(-45deg);
+                        top: 1.1rem;
+                    }
+                }
+
+                nav ul {
+                    right: 0;
                 }
             }
         }

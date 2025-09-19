@@ -5,7 +5,7 @@
     height: 100vh !important;
 
     @media screen and (max-width:1200px) {
-        height: auto;
+        height: auto !important;
     }
 
     h1.tit {
@@ -15,6 +15,7 @@
 
         @media screen and (max-width:1599px) {
             transform: translateX(0);
+            align-self: flex-start;
         }
 
         .star-spin {
@@ -35,6 +36,7 @@
         }
 
         .in-wrap {
+            // width: 25%;
             flex: 1;
 
             @media screen and (max-width:1440px) {
@@ -52,15 +54,18 @@
                         padding: 0 3rem 0 0;
                     }
 
-                    &:nth-child(odd) {
-                        background-color: var(--gray300);
+                    &:nth-child(even) {
+                        background-color: var(--gray100);
                     }
 
                     &:hover {
-                        background-color: var(--gray500);
+                        background-color: var(--primary);
+                        color: var(--bg);
                     }
+
                 }
             }
         }
+
     }
 }

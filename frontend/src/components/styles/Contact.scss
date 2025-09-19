@@ -7,6 +7,7 @@
         transform: translateX(-5rem);
 
         @media screen and (max-width:1200px) {
+
             transform: translateX(0);
         }
     }
@@ -14,7 +15,7 @@
     .contact-wrapper {
         display: flex;
         gap: 5rem;
-        padding-top: clamp(12rem, 14vw, 16rem);
+        padding-top: clamp(10rem, 14vw, 16rem);
 
         @media screen and (max-width:1200px) {
             flex-direction: column;
@@ -47,7 +48,7 @@
                         }
                     }
 
-                    @media screen and (max-width:1200px) {
+                    @media screen and (max-width:768px) {
                         flex-direction: column;
                         gap: .5rem;
 
@@ -110,24 +111,25 @@
                     justify-content: center;
 
                     @media screen and (max-width:1200px) {
-                        padding-left: 0;
                         text-align: center;
                         gap: .5rem;
                         padding: 2rem 0;
                     }
                 }
 
-                .contact-chips{
+                .contact-chips {
                     flex-direction: row;
                     justify-content: flex-start;
                     align-items: center;
 
-                    @media screen and (max-width:768px) {
-                        
+                    @media screen and (max-width:1200px) {
+                        justify-content: center;
+
                     }
                 }
 
                 .content {
+
                     a {
                         display: block;
                         color: var(--neutral-600);
@@ -138,7 +140,6 @@
                         margin-top: 1rem;
                         font-size: .9rem;
                         color: var(--neutral-600);
-
                     }
                 }
 
@@ -146,6 +147,11 @@
                     >.label {
                         background-color: var(--neutral-900);
                         color: var(--neutral-100);
+                    }
+
+                    .content,
+                    .contact-chips {
+                        background-color: var(--primary);
                     }
                 }
             }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Nav from './Nav'
 import './styles/Header.scss'
 import { useTheme } from '../context/ThemeContext'
+import FixedTop from './FixedTop'
 
 const Header = () => {
 
@@ -13,12 +14,12 @@ const Header = () => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true)
-
       } else {
         setScrolled(false)
       }
     }
     handleScroll()
+
     window.addEventListener('scroll', handleScroll)
   }, [])
 
@@ -45,6 +46,7 @@ const Header = () => {
           <button className='btn' onClick={toggleTheme}>{theme}</button>
         </div>
       </div>
+      <FixedTop />
     </header>
   )
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "./styles/AdminContact.scss"
 import { api } from '../../lib/api'
 import Swal from 'sweetalert2'
+
 const AdminContact = () => {
 
   const [contacts, setContacts] = useState([])
@@ -26,14 +27,15 @@ const AdminContact = () => {
         { status: newStatus },
         { withCredentials: true }
       )
+
       setContacts((prev) =>
         prev.map((c) => (c._id === contactId ? { ...c, status: newStatus } : c))
       )
-      Swal.fire("수정완료", "상태가 성공적으로 수정되었습니다.", "success")
+      Swal.fire("수정 완료", "상태가 성공적으로 수정됨.", "success")
 
     } catch (error) {
-      console.log("수정실패", error)
-      Swal.fire("오류발생", "수정중 문제가 발생했습니다.", "error")
+      console.log("수정 실패", error)
+      Swal.fire("오류 발생", "수정중 문제 발생.", "error")
     }
   }
 
@@ -51,6 +53,7 @@ const AdminContact = () => {
       cancelButtonText: "취소",
       showCancelButton: true
     })
+
     if (isConfirmed && newStatus) {
       handleStatusUpdate(contact._id, newStatus)
     }
@@ -76,12 +79,12 @@ const AdminContact = () => {
       })
 
       setContacts((prev) => prev.filter((c) => c._id !== id))
-      Swal.fire("삭제완료", "문의가 성공적으로 삭제 되었습니다.", "success")
+      Swal.fire("삭제 완료", "문의가 성공적으로 삭제됨.", "success")
+
     } catch (error) {
       console.log("삭제 실패", error)
-      Swal.fire("오류발생", "삭제 중 문제가 발생했습니다.", "error")
+      Swal.fire("오류 발생", "삭제 중 문제 발생.", "error")
     }
-
   }
 
   return (
@@ -89,7 +92,7 @@ const AdminContact = () => {
       <h2>문의글 관리</h2>
       <div className="contact-wrapper">
         <ul className="contact-list">
-          {contacts.map((c, i) => (
+          {contacts.map((c) => (
 
             <li key={c._id}>
               <p>
@@ -125,12 +128,12 @@ const AdminContact = () => {
                 </span>
               </p>
               <div className="btns">
-                <button onClick={() => showStatusChangeModal(c)}>
-                  상태변경
-                </button>
-                <button onClick={() => handleDelete(c._id)}>
-                  삭제
-                </button>
+                <button
+                  onClick={() => showStatusChangeModal(c)}
+                >상태변경</button>
+                <button
+                  onClick={() => handleDelete(c._id)}
+                >삭제</button>
               </div>
             </li>
           ))}
